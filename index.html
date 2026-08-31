@@ -262,7 +262,7 @@ header.site-nav.scrolled{ border-bottom:1px solid var(--dust); box-shadow:0 6px 
 .dstatus.viewable:hover{background:var(--ash); color:var(--iron-dark);}
 
 /* ================= CAPABILITIES — interactive grid ================= */
-.cap-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:22px;}
+.cap-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
 @media (max-width:1000px){ .cap-grid{grid-template-columns:1fr 1fr;} }
 @media (max-width:600px){ .cap-grid{grid-template-columns:1fr;} }
 .cap-card{
@@ -302,6 +302,12 @@ header.site-nav.scrolled{ border-bottom:1px solid var(--dust); box-shadow:0 6px 
 .t-org{font-size:14.5px; color:var(--ink-soft); font-weight:500; margin-bottom:12px;}
 .t-desc{font-size:14.5px; color:var(--ink-soft); max-width:620px; margin-bottom:12px;}
 .t-strengths{font-size:13px; color:var(--ink-faint); font-family:var(--mono); line-height:1.7;}
+.t-group{ margin-top:14px; padding-left:22px; border-left:2px solid var(--dust); display:flex; flex-direction:column; gap:28px; }
+.t-subitem:not(:last-child){padding-bottom:2px;}
+.t-sub-when{font-family:var(--mono); font-size:12px; color:var(--ash-dark); margin-bottom:4px;}
+.t-sub-role{font-size:16.5px; margin-bottom:3px; font-weight:600; color:var(--iron-dark);}
+.t-sub-org{font-size:13.5px; color:var(--ink-soft); font-weight:500; margin-bottom:10px;}
+@media (max-width:600px){ .t-group{padding-left:16px;} }
 @media (max-width:600px){ .timeline-track,.timeline-progress{left:23px;} .t-item{grid-template-columns:46px 1fr; gap:16px;} .t-num{width:46px; height:46px; font-size:16px;} }
 
 /* ================= EDUCATION ================= */
@@ -317,13 +323,20 @@ header.site-nav.scrolled{ border-bottom:1px solid var(--dust); box-shadow:0 6px 
 .edu-card ul li::before{content:"✓"; position:absolute; left:0; color:var(--cherry-dark); font-weight:700; font-size:12px; top:2px;}
 .cred-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:16px;}
 @media (max-width:800px){ .cred-grid{grid-template-columns:1fr 1fr;} }
+.achievement-card{
+  display:flex; align-items:flex-start; gap:16px; background:var(--petal); border-radius:var(--radius-md);
+  padding:22px 26px; margin-bottom:40px;
+}
+.achievement-icon{font-size:22px; line-height:1; margin-top:2px;}
+.achievement-card h3{font-size:15.5px; margin:0 0 4px; color:var(--iron-dark); font-weight:600;}
+.achievement-card p{font-size:13.5px; color:var(--ink-soft); margin:0;}
 .cred{ border:1px solid var(--dust); border-radius:12px; padding:18px; text-align:left; font-family:var(--mono); background:var(--cream-2); transition:border-color .25s ease;}
 .cred:hover{border-color:var(--ash-dark);}
 .cred .cname{font-size:13.5px; font-weight:500; color:var(--iron-dark); font-family:var(--sans); display:block; margin-bottom:6px;}
 .cred .cmeta{font-size:12px; color:var(--ink-faint);}
 
 /* ================= COMMUNITY ================= */
-.community-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
+.community-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:24px;}
 @media (max-width:860px){ .community-grid{grid-template-columns:1fr;} }
 .community-card{
   background:var(--petal); border-radius:var(--radius-md); padding:34px 28px; text-align:left;
@@ -406,9 +419,9 @@ footer{padding:44px 0; border-top:1px solid var(--dust);}
     <nav class="nav-links" id="navLinks">
       <a href="#home" data-nav>Home</a>
       <a href="#about" data-nav>About</a>
+      <a href="#experience" data-nav>Experience</a>
       <a href="#projects" data-nav>Projects</a>
       <a href="#capabilities" data-nav>Capabilities</a>
-      <a href="#experience" data-nav>Experience</a>
       <a href="#education" data-nav>Education</a>
       <a href="#community" data-nav>Community</a>
       <a href="#testimonials" data-nav>Testimonials</a>
@@ -426,11 +439,11 @@ footer{padding:44px 0; border-top:1px solid var(--dust);}
 <section id="home" class="hero">
   <div class="wrap hero-inner reveal">
     <div class="kicker">
-      <span>BUSINESS ANALYST</span><span class="sep">/</span><span>WELLINGTON, NEW ZEALAND</span>
+      <span>BUSINESS ANALYST • PROJECT &amp; PROGRAMME COORDINATOR</span><span class="sep">/</span><span>WELLINGTON, NEW ZEALAND</span>
     </div>
-    <h1>Turning complexity<br>into <em>clarity.</em></h1>
+    <h1>Turning complexity into <em>clarity</em><br>and plans into action.</h1>
     <p class="hero-sub">Curious enough to ask why. Structured enough to solve it.</p>
-    <p class="hero-intro">Master of Professional Business Analysis graduate with hands-on experience delivering industry consulting projects across AI transformation, enterprise architecture, digital strategy, and business analytics. I enjoy working with stakeholders to understand complex challenges and transform them into structured, practical solutions that create meaningful business value.</p>
+    <p class="hero-intro">Master of Professional Business Analysis graduate with hands-on experience across business analysis, operations, project work, administration, student support and consulting projects spanning AI transformation, enterprise architecture, digital strategy, and business analytics. I enjoy understanding how things work, bringing structure to complex problems, coordinating people and information, and turning ideas into practical outcomes that create meaningful business value.</p>
     <div class="hero-ctas">
       <a href="#projects" class="btn btn-primary">Explore Projects</a>
       <a href="#about" class="btn btn-outline">About Me</a>
@@ -446,7 +459,7 @@ footer{padding:44px 0; border-top:1px solid var(--dust);}
     <div class="section-head reveal">
       <div class="eyebrow">How I Think</div>
       <h2>How I approach problems.</h2>
-      <p class="sub">Not a framework I recite — a habit I keep. Hover each stage to see what it looks like in practice.</p>
+      <p class="sub">I don't stop at the first answer.</p>
     </div>
     <div class="process-row stagger" id="processRow"></div>
   </div>
@@ -455,10 +468,10 @@ footer{padding:44px 0; border-top:1px solid var(--dust);}
 <!-- ============ SNAPSHOT ============ -->
 <section class="snapshot" aria-label="Career snapshot">
   <div class="wrap snapshot-grid">
-    <div class="stat reveal"><div class="num" data-count="5" data-suffix="+">0</div><div class="label">Industries Experienced Across</div></div>
-    <div class="stat reveal"><div class="num" data-count="5">0</div><div class="label">Consulting & Analysis Projects</div></div>
+    <div class="stat reveal"><div class="num" data-count="5" data-suffix="+">0</div><div class="label">Industry &amp; Client Projects</div></div>
     <div class="stat reveal"><div class="num" data-count="20" data-suffix="+">0</div><div class="label">Business Analysis Deliverables</div></div>
     <div class="stat reveal"><div class="num" data-static="A+">0</div><div class="label">Master of Professional Business Analysis GPA</div></div>
+    <div class="stat reveal"><div class="num" data-static="3 yrs">0</div><div class="label">Operations, Administration &amp; Coordination</div></div>
   </div>
 </section>
 
@@ -477,9 +490,9 @@ footer{padding:44px 0; border-top:1px solid var(--dust);}
         <h2 style="font-size:clamp(26px,3.2vw,36px); margin-bottom:20px;">I don't settle for the first answer.</h2>
         <p class="about-lede">I keep asking why until the right solution becomes clear.</p>
         <div class="about-copy">
-          <p>I'm a recent Master of Professional Business Analysis graduate who enjoys turning complexity into clarity. My journey began in hospitality and operations, where I learned to solve problems under pressure, understand people's needs, and improve day-to-day processes. That experience naturally led me to Business Analysis, where I found the opportunity to combine analytical thinking, structured problem solving, and collaboration to design better business outcomes.</p>
-          <p>I'm naturally observant and curious. Rather than accepting things as they are, I like to understand <strong>why</strong> a process exists, challenge assumptions, and explore whether there's a better way. I prefer understanding different perspectives before forming my own view, but once I have clarity, I'm confident leading discussions, making decisions, and guiding teams towards a shared outcome.</p>
-          <p>Outside the technical skills, I value ownership, integrity, and continuous improvement. I believe good Business Analysis isn't about documenting requirements — it's about helping people make better decisions, improving the way organisations work, and creating solutions that deliver meaningful value.</p>
+          <p>I'm a Master of Professional Business Analysis graduate with experience across consulting, operations, property management, education and student services. My career started in hospitality and operations, where I learned to solve problems quickly, work with different people, and keep things moving when plans change. That experience led me to Business Analysis, where I found a way to combine practical instincts with structured thinking, analytical problem-solving and continuous improvement.</p>
+          <p>I'm naturally observant, curious, and quick to learn. Rather than accepting things as they are, I like to understand <strong>why</strong> a process exists, challenge assumptions, and explore whether there's a better way. I prefer understanding different perspectives before forming my own view, but once I have clarity, I'm confident leading discussions, making decisions, and guiding teams towards a shared outcome.</p>
+          <p>Outside the technical skills, I value ownership, integrity, adaptability and continuous improvement. I believe my strength lies in moving between the strategic and the practical — understanding the bigger picture while paying attention to the details that make things work.</p>
         </div>
       </div>
     </div>
@@ -487,7 +500,88 @@ footer{padding:44px 0; border-top:1px solid var(--dust);}
 </section>
 
 <div class="divider" aria-hidden="true">
-  <svg viewBox="0 0 1440 70" preserveAspectRatio="none"><path d="M0,40 C360,0 1080,80 1440,30 L1440,70 L0,70 Z" fill="#F5EFE7"></path></svg>
+  <svg viewBox="0 0 1440 70" preserveAspectRatio="none"><path d="M0,40 C360,0 1080,80 1440,30 L1440,70 L0,70 Z" fill="#F7E1D7"></path></svg>
+</div>
+
+<!-- ============ EXPERIENCE ============ -->
+<section id="experience" class="section-pad bg-petal">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Experience</div>
+      <h2>A journey from the floor to the framework.</h2>
+      <p class="sub">From customer-facing leadership to Business Analysis — combining operational excellence, industry consulting, and academic achievement.</p>
+    </div>
+
+    <div class="timeline" id="timeline">
+      <div class="timeline-track"></div>
+      <div class="timeline-progress" id="timelineProgress"></div>
+
+      <div class="t-item reveal">
+        <div class="t-num">①</div>
+        <div class="t-content">
+          <div class="t-when">2019 – 2022</div>
+          <h3 class="t-role">Bachelor of Business (Hospitality Management)</h3>
+          <div class="t-org">International College of Hotel Management, Australia</div>
+          <p class="t-desc">Developed strong foundations in business operations, leadership, customer experience, and service management while graduating with High Distinction performance.</p>
+        </div>
+      </div>
+      <div class="t-item reveal">
+        <div class="t-num">②</div>
+        <div class="t-content">
+          <div class="t-when">2022 – Present</div>
+          <h3 class="t-role">Administration · Operations · Leadership</h3>
+          <div class="t-group">
+            <div class="t-subitem">
+              <div class="t-sub-when">2022 – Present</div>
+              <h4 class="t-sub-role">Night Auditor → Night Manager</h4>
+              <div class="t-sub-org">IHG Hotels · Sofitel Wellington</div>
+              <p class="t-desc">Progressed from Guest Service Agent at IHG Hotels to Night Auditor and now Night Manager at Sofitel Wellington — managing operations independently overnight, completing financial reconciliation, audit reporting and payment checks, and investigating discrepancies across teams. Maintained service continuity under competing priorities while communicating across departments to resolve guest, operational and financial matters.</p>
+              <div class="t-strengths">Operations Mgmt / Leadership / Financial Reconciliation / Risk Mgmt / Reporting / Problem Solving / Data Accuracy / Cross-functional Collaboration</div>
+            </div>
+            <div class="t-subitem">
+              <div class="t-sub-when">Aug 2023 – Jan 2025</div>
+              <h4 class="t-sub-role">Property Management Agent</h4>
+              <div class="t-sub-org">UniLodge · Adelaide, Australia</div>
+              <p class="t-desc">Supported a large multicultural student accommodation community across student services, administration, finance and day-to-day operations — reconciling accounts, resolving resident and stakeholder queries, and coordinating competing priorities with close attention to detail.</p>
+              <div class="t-strengths">Administrative Coordination / Financial Administration / Stakeholder Communication / Records & Data Accuracy / Problem Solving / Customer Service / Operational Coordination</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="t-item reveal">
+        <div class="t-num">③</div>
+        <div class="t-content">
+          <div class="t-when">2025 – 2026</div>
+          <h3 class="t-role">Master of Professional Business Analysis</h3>
+          <div class="t-org">Victoria University of Wellington</div>
+          <p class="t-desc">Specialised in Business Analysis through industry projects covering AI Transformation, Enterprise Architecture, Business Analytics, Project Management, Digital Strategy, and Digital Transformation Consulting.</p>
+        </div>
+      </div>
+      <div class="t-item reveal">
+        <div class="t-num">④</div>
+        <div class="t-content">
+          <div class="t-when">2026 – Present</div>
+          <h3 class="t-role">Information Systems Tutor</h3>
+          <div class="t-org">Victoria University of Wellington</div>
+          <p class="t-desc">Tutor for INFO306 Digital Architecture, mentoring undergraduate students in enterprise architecture, TOGAF ADM, ArchiMate modelling, digital transformation, and architecture governance while supporting tutorials, workshops, and assessment.</p>
+          <div class="t-strengths">Academic & Student Support / Workshop Facilitation / Complex Information Communication / Feedback & Assessment / Inclusive Learning Support / Enterprise Architecture (TOGAF / ArchiMate)</div>
+        </div>
+      </div>
+      <div class="t-item reveal">
+        <div class="t-num">⑤</div>
+        <div class="t-content">
+          <div class="t-when">Now</div>
+          <h3 class="t-role">Graduate Business &amp; Project Professional</h3>
+          <div class="t-org">Business Analysis • Project Coordination • Transformation • Operations</div>
+          <p class="t-desc">Combining industry consulting projects, academic experience, operational leadership and student support to help organisations understand problems, coordinate people and information, and deliver practical outcomes.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider" aria-hidden="true">
+  <svg viewBox="0 0 1440 70" preserveAspectRatio="none"><path d="M0,30 C400,80 1040,0 1440,40 L1440,70 L0,70 Z" fill="#F5EFE7"></path></svg>
 </div>
 
 <!-- ============ PROJECTS ============ -->
@@ -524,73 +618,6 @@ footer{padding:44px 0; border-top:1px solid var(--dust);}
   </div>
 </section>
 
-<div class="divider" aria-hidden="true">
-  <svg viewBox="0 0 1440 70" preserveAspectRatio="none"><path d="M0,30 C400,80 1040,0 1440,40 L1440,70 L0,70 Z" fill="#F7E1D7"></path></svg>
-</div>
-
-<!-- ============ EXPERIENCE ============ -->
-<section id="experience" class="section-pad bg-petal">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <div class="eyebrow">Experience</div>
-      <h2>A journey from the floor to the framework.</h2>
-      <p class="sub">From customer-facing leadership to Business Analysis — combining operational excellence, industry consulting, and academic achievement.</p>
-    </div>
-
-    <div class="timeline" id="timeline">
-      <div class="timeline-track"></div>
-      <div class="timeline-progress" id="timelineProgress"></div>
-
-      <div class="t-item reveal">
-        <div class="t-num">①</div>
-        <div class="t-content">
-          <div class="t-when">2019 – 2022</div>
-          <h3 class="t-role">Bachelor of Business (Hospitality Management)</h3>
-          <div class="t-org">International College of Hotel Management, Australia</div>
-          <p class="t-desc">Developed strong foundations in business operations, leadership, customer experience, and service management while graduating with High Distinction performance.</p>
-        </div>
-      </div>
-      <div class="t-item reveal">
-        <div class="t-num">②</div>
-        <div class="t-content">
-          <div class="t-when">2022 – Present</div>
-          <h3 class="t-role">Hospitality Operations &amp; Leadership</h3>
-          <div class="t-org">UniLodge · IHG Hotels · Sofitel Wellington</div>
-          <p class="t-desc">Built practical experience leading operations, managing stakeholders, analysing operational data, and solving complex customer and business problems in fast-paced environments across Australia and New Zealand.</p>
-          <div class="t-strengths">Operations Mgmt / Leadership / Stakeholder Comms / Risk Mgmt / Reporting / Problem Solving / Data Accuracy / Cross-functional Collaboration</div>
-        </div>
-      </div>
-      <div class="t-item reveal">
-        <div class="t-num">③</div>
-        <div class="t-content">
-          <div class="t-when">2025 – 2026</div>
-          <h3 class="t-role">Master of Professional Business Analysis</h3>
-          <div class="t-org">Victoria University of Wellington</div>
-          <p class="t-desc">Specialised in Business Analysis through industry projects covering AI Transformation, Enterprise Architecture, Business Analytics, Project Management, Digital Strategy, and Digital Transformation Consulting.</p>
-        </div>
-      </div>
-      <div class="t-item reveal">
-        <div class="t-num">④</div>
-        <div class="t-content">
-          <div class="t-when">2026 – Present</div>
-          <h3 class="t-role">Information Systems Tutor</h3>
-          <div class="t-org">Victoria University of Wellington</div>
-          <p class="t-desc">Tutor for INFO306 Digital Architecture, mentoring undergraduate students in enterprise architecture, TOGAF ADM, ArchiMate modelling, digital transformation, and architecture governance while supporting tutorials, workshops, and assessment.</p>
-        </div>
-      </div>
-      <div class="t-item reveal">
-        <div class="t-num">⑤</div>
-        <div class="t-content">
-          <div class="t-when">Now</div>
-          <h3 class="t-role">Graduate Business Analyst</h3>
-          <div class="t-org">Actively seeking Business Analyst opportunities</div>
-          <p class="t-desc">Combining industry consulting projects, tutoring, operational leadership, and strong analytical capability to help organisations solve complex business problems.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ============ EDUCATION ============ -->
 <section id="education" class="section-pad bg-cream">
   <div class="wrap">
@@ -611,6 +638,12 @@ footer{padding:44px 0; border-top:1px solid var(--dust);}
           <li>Recipient of the Tongarewa Scholarship (Trimester 1, 2025)</li>
           <li>Industry consulting projects across AI Transformation, Business Analysis, Enterprise Architecture, Business Analytics, and Digital Transformation</li>
         </ul>
+        <div style="margin-top:18px;">
+          <a class="dstatus viewable" href="VUW_Qualification_.pdf" target="_blank" rel="noopener" style="text-decoration:none; width:fit-content;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg>
+            View Academic Transcript
+          </a>
+        </div>
       </div>
       <div class="edu-card reveal">
         <span class="cap-icon">🎓</span>
@@ -622,6 +655,20 @@ footer{padding:44px 0; border-top:1px solid var(--dust);}
           <li>Provost Award — Dux of Third-Year Bachelor Studies, 2023</li>
           <li>Outstanding Academic Achievement Award (Second &amp; Third Year)</li>
         </ul>
+        <div style="margin-top:18px;">
+          <a class="dstatus viewable" href="ICHM_Qualification.pdf" target="_blank" rel="noopener" style="text-decoration:none; width:fit-content;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg>
+            View Academic Transcript
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="achievement-card reveal">
+      <span class="achievement-icon">🥈</span>
+      <div>
+        <h3>Runner-Up, Women in Business Consulting Competition (VUW)</h3>
+        <p>Selected to represent Victoria University of Wellington at the National Round, Sep 2026</p>
       </div>
     </div>
 
@@ -646,6 +693,16 @@ footer{padding:44px 0; border-top:1px solid var(--dust);}
 
     <div class="community-grid">
       <div class="community-card reveal">
+        <span class="community-emoji">🎉</span>
+        <h3>Event Organisor</h3>
+        <div class="community-org">Vietnamese Student Association Wellington</div>
+        <span class="community-date">Jul 2026 – Present</span>
+        <ul>
+          <li>Contribute to end-to-end planning and delivery of VSAW events, coordinating timelines, stakeholders, resources and event-day execution.</li>
+          <li>Support budget planning, procurement and resource coordination to keep events within available resources.</li>
+        </ul>
+      </div>
+      <div class="community-card reveal">
         <span class="community-emoji">❤️</span>
         <h3>University Club Coordinator</h3>
         <div class="community-org">New Zealand Red Cross</div>
@@ -659,7 +716,7 @@ footer{padding:44px 0; border-top:1px solid var(--dust);}
         <span class="community-emoji">🌏</span>
         <h3>International Buddy Programme Volunteer</h3>
         <div class="community-org">Victoria University of Wellington</div>
-        <span class="community-date">Feb 2026 – Present</span>
+        <span class="community-date">Feb 2026 – Jun 2026</span>
         <ul>
           <li>Supported new international students in settling into university life and New Zealand culture through peer mentoring.</li>
           <li>Helped students navigate academic, campus, and day-to-day challenges.</li>
@@ -669,10 +726,10 @@ footer{padding:44px 0; border-top:1px solid var(--dust);}
         <span class="community-emoji">🤝</span>
         <h3>NZELTO Conversation Partner</h3>
         <div class="community-org">Victoria University of Wellington</div>
-        <span class="community-date">May 2026 – Present</span>
+        <span class="community-date">Starting Sep 2026</span>
         <ul>
-          <li>Helped government scholarship recipients from Asia and Africa build confidence in English.</li>
-          <li>Introduced conversation partners to New Zealand culture and community.</li>
+          <li>Helping government scholarship recipients from Asia and Africa build confidence in English.</li>
+          <li>Introducing conversation partners to New Zealand culture and community.</li>
         </ul>
       </div>
     </div>
@@ -710,7 +767,8 @@ footer{padding:44px 0; border-top:1px solid var(--dust);}
     <div class="contact-band reveal">
       <div class="eyebrow" style="justify-content:center;">Contact</div>
       <h2>Let's connect.</h2>
-      <p>I'm seeking Business Analyst opportunities where I can contribute through structured thinking, stakeholder collaboration, and evidence-based problem solving. I'm equally passionate about connecting with people who enjoy Business Analysis, digital transformation, and solving meaningful business problems. Whether you're looking to hire, discuss ideas, share experiences, explore opportunities, or simply expand your professional network, I'd love to connect.</p>
+      <p style="margin-bottom:14px;">I'm interested in opportunities where I can combine structured thinking, coordination and problem solving to make complex work simpler and more effective.</p>
+      <p>I'm always happy to connect with people working across business consulting, transformation, project and programme delivery, education, student experience and operations.</p>
       <div class="contact-ctas">
         <a class="btn btn-primary" href="mailto:gracenguyen1021@gmail.com">📧 Email Me</a>
         <a class="btn btn-outline" href="https://www.linkedin.com/in/grace-nguyen-5a7a5a195/" target="_blank" rel="noopener">💼 LinkedIn</a>
@@ -764,16 +822,17 @@ const icons = {
   architecture: '<svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>',
   chart: '<svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>',
   tools: '<svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.77z"/></svg>',
+  clipboard: '<svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="13" y2="16"/></svg>',
 };
 
 // ============ PROCESS DATA ============
 const processSteps = [
-  { num:"01", title:"Understand", icon:icons.eye, desc:"Get close to the problem as the stakeholder experiences it, before touching a solution." },
-  { num:"02", title:"Question", icon:icons.question, desc:"Challenge assumptions and ask why, more than once, until the real issue surfaces." },
-  { num:"03", title:"Investigate", icon:icons.search, desc:"Dig into process, data, and evidence to test what's actually happening." },
-  { num:"04", title:"Connect", icon:icons.link, desc:"Join the dots across stakeholders, systems, and root causes." },
-  { num:"05", title:"Simplify", icon:icons.layers, desc:"Strip complexity back to the structure that actually matters." },
-  { num:"06", title:"Recommend", icon:icons.check, desc:"Deliver a clear, evidence-based recommendation people can act on." },
+  { num:"01", title:"Understand", icon:icons.eye, desc:"What is actually happening?" },
+  { num:"02", title:"Question", icon:icons.question, desc:"Why does the problem exist?" },
+  { num:"03", title:"Connect", icon:icons.link, desc:"Which people, processes or systems are involved?" },
+  { num:"04", title:"Challenge", icon:icons.search, desc:"What assumptions or gaps are shaping the current state?" },
+  { num:"05", title:"Clarify", icon:icons.layers, desc:"What is the real problem worth solving?" },
+  { num:"06", title:"→ Recommend", icon:icons.check, desc:"A practical, evidence-based way forward." },
 ];
 const processRow = document.getElementById('processRow');
 processRow.innerHTML = processSteps.map((s,i)=>`
@@ -788,9 +847,10 @@ processRow.innerHTML = processSteps.map((s,i)=>`
 // ============ CAPABILITIES DATA ============
 const capabilities = [
   { icon:icons.stakeholder, title:"Business Analysis", items:["Requirements Elicitation","Stakeholder Engagement","Workshop Facilitation","Business Process Modelling (BPMN)","Current & Future State Analysis","Root Cause Analysis","Gap Analysis","Business Case Development","Solution Evaluation","Process Documentation"] },
+  { icon:icons.clipboard, title:"Project, Programme &amp; Operations", items:["Project Coordination","Project Planning","Milestone &amp; Timeline Tracking","Deliverable Coordination","Meeting &amp; Action Management","Stakeholder Coordination","Operational Planning","Budget Management","Administrative Coordination","Financial Reconciliation","Reporting &amp; Data Accuracy","Cross-functional Coordination"] },
   { icon:icons.architecture, title:"Enterprise &amp; Digital Transformation", items:["Enterprise Architecture","Capability Mapping","Value Stream Mapping","Business Architecture","Digital Transformation","AI Transformation","Business Process Improvement","Governance &amp; Decision Support","Change &amp; Transition Planning","Strategic Analysis"] },
-  { icon:icons.chart, title:"Data &amp; Analytics", items:["Business Analytics","Data Analysis","Data Visualisation","Decision Support","Reporting &amp; Insights","Problem Framing","Evidence-Based Recommendations","K-Means Clustering","SQL Queries","R Programming"] },
-  { icon:icons.tools, title:"Tools &amp; Technologies", items:["ArchiMate","Camunda","Archi","Miro","Lucidchart","R Studio","SQL","Microsoft 365","Canva","GitHub","AI Tools — Claude, ChatGPT, Gemini, NotebookLM, Copilot, Numa, Scribe"] },
+  { icon:icons.chart, title:"Data &amp; Analytics", items:["Business Analytics","Data Analysis","Data Visualisation","Decision Support","Reporting &amp; Insights","Problem Framing","Evidence-Based Recommendations","SQL Queries","R Programming"] },
+  { icon:icons.tools, title:"Tools &amp; Technologies", items:["ArchiMate","Camunda","Archi","Miro","Lucidchart","RStudio","SQL","Microsoft 365","Microsoft Excel","Canva","GitHub","AI Tools — Claude, ChatGPT, Gemini, NotebookLM, Copilot, NUMA, Scribe"] },
 ];
 document.getElementById('capGrid').innerHTML = capabilities.map((c,i)=>`
   <div class="cap-card reveal" style="--i:${i};">
@@ -806,15 +866,18 @@ const projects = [
     title:"AI-Assisted Operational Knowledge Capture",
     meta:"NUMA by Arcanum AI · Business Analyst · Feb 2026 – Jun 2026",
     overview:"Worked with a live AI startup to investigate how small and medium-sized businesses can capture fragmented operational knowledge and transform it into structured, automation-ready intelligence. The project combined stakeholder discovery, process analysis, AI evaluation, and governance considerations to develop a practical knowledge capture framework for future AI adoption.",
-    domains:["AI Transformation","Business Analysis","Process Improvement","Digital Consulting","SaaS"],
+    domains:["AI Transformation","Business Analysis","Process Improvement","Project Coordination","Digital Consulting","SaaS"],
     contributions:[
       "Conducted stakeholder interviews and validation workshops with the client and SMBs.",
       "Modelled current and future-state business processes using BPMN.",
       "Evaluated AI tools through a structured multi-criteria assessment framework.",
       "Designed an AI-assisted operational knowledge capture workflow.",
-      "Developed client-facing recommendations balancing automation, governance, privacy, and user adoption."
+      "Developed client-facing recommendations balancing automation, governance, privacy, and user adoption.",
+      "Contributed to defining the project scope, key deliverables and milestones across the engagement.",
+      "Tracked project progress and timelines using a Gantt chart, helping the team maintain visibility of upcoming deliverables and dependencies.",
+      "Coordinated regular client meetings, including scheduling, agenda preparation, chairing discussions, note-taking and follow-up actions."
     ],
-    capabilities:["Stakeholder Engagement","Process Modelling","Requirements Discovery","Solution Evaluation","Decision Analysis","Workshop Facilitation","Consulting Communication"],
+    capabilities:["Project Coordination","Stakeholder Engagement","Process Modelling","Requirements Discovery","Solution Evaluation","Decision Analysis","Workshop Facilitation","Consulting Communication"],
     value:"Developed a practical operational knowledge capture approach that informed NUMA's AI product strategy and provided structured recommendations for improving SMB automation readiness.",
     deliverables:[
       {name:"Interim Project Report", desc:"Current-state analysis, BPMN models, AI tool evaluation, and initial recommendations.", url:null},
@@ -832,7 +895,8 @@ const projects = [
       "Interpreted client feedback and translated it into architecture models.",
       "Analysed stakeholder needs, business capabilities, and current-state processes.",
       "Contributed to target-state architecture and migration planning.",
-      "Coordinated client communication and report integration across the project team."
+      "Coordinated client communication, integrated feedback into architecture outputs, and led report consolidation across the project team.",
+      "Set up and chaired regular project meetings, documenting discussions, actions and follow-up requirements."
     ],
     capabilities:["Enterprise Architecture","Stakeholder Analysis","Current-State Analysis","Capability Mapping","Requirements Analysis","Process Modelling","Documentation","Client Communication"],
     value:"Produced architecture recommendations that improved digital service integration while maintaining statutory independence, supporting more connected and user-centred public digital services.",
